@@ -1,0 +1,140 @@
+Bill Joy, of Joy's Law fame[^n], among other things, <a name="top" href="http://www.linfo.org/vi/history.html">wrote the code for _Vi_</a> in 1976 as the visual editing component of the _ex_ editor.
+
+Then In 1979, Joy released Vi into the wild as a standalone editor. It did well but ran up against licensing restrictions.
+
+Then in 2000, Gunnar Ritter ported Joy's original _Vi_ to the modern Unix-like operating systems, producing the _default_ editor.[^n]
+
+## Vim emerges
+Bram Moolenaar then added an astonishingly extensive, powerful feature set to create what we know now as _Vim_[^n]
+
+Moolenaar released _Vim_ as _free and open source_ software under a [GNU General Public License (GPL)](https://www.gnu.org/licenses/gpl.html) compatible license, adding a _charity clause_ encouraging _Vim_ users to donate to an organization helping hungry children in _Uganda._[^n]
+
+He's doing real work to feed hungry children with the help of _Vim_ users [who've donated to this cause.](http://www.vim.org/sponsor/index.php)
+
+## Vim is everywhere
+
+Even if you're still not convinced that _Vim_ is worth the trouble, consider that it's so ubiquitous on Unix-like operating systems that many configuration utilities use "_Vim_" by default.
+
+To the end of helping users develop quick competence, Vim has a built-in help function called `vimtutor` that you can run from the command line, along with [excellent documentation.](http://www.vim.org/docs.php)
+
+## Understanding modes
+
+The key to learning _Vim_ quickly is understanding the two primary modes: the `command` _mode_ and the `Insert` _mode._ Once you understand the modal editor model, the basics of using Vim fall into place.
+
+### Command mode
+
+Vim starts in _command_ mode, enabling you to enter commands. Vim is too much to take in with one drink, so here are some commands that will give you an immediate boost to your productivity, serving as a sound foundation for further progress.
+
+### Basic commands 
+You can get around your file efficiently with these commands.[^n]
+<table>
+<tr>
+<td>Up Arrow </td><td>Navigate up</td>
+</tr>
+<tr>
+<td>Down Arrow </td><td>Navigate down</td>
+</tr>
+<tr>
+<td>Right Arrow </td><td>Navigate right</td>
+</tr> 
+<tr>
+<td>Left Arrow</td><td> Navigate left</td>
+</tr>
+<tr>
+<td>CTRL-D</td><td> Page Down</td>
+</tr>
+<tr>
+<td>CTRL-U</td><td> Page Up</td>
+</tr>
+<tr>
+<td>CTRL-E</td><td> Down one line</td>
+</tr>
+<tr>
+<td>CTRL-Y</td><td> Up one line</td>
+</tr>
+</table>
+
+### Turn the efficiency knob to 7
+You'll notice an increase in your effectiveness in _Vim_ with each new command you learn.
+<table>
+<tr>
+<td>i</td><td>Insert text before cursor</td>
+</tr>
+<tr>
+<td>a</td><td>Insert text after cursor</td>
+</tr> 
+<tr>
+<td>I</td><td>Insert text at start of line</td>
+</tr>
+<tr> 
+<td>A</td><td>Insert text at end of line</td>
+</tr>
+<tr> 
+<td>o</td><td>Open a new line below current line</td>
+</tr>
+<tr>
+<td>O</td><td>Open a new line above current line</td>
+</tr>
+<tr>
+<td>$</td><td>To end of the line</td>
+</tr>
+<tr>
+<td>w</td><td>Forward one word</td>
+</tr>
+<tr>
+<td>b</td><td>Backwards one word</td>
+</tr>
+<tr>
+<td>G</td><td>Navigate to end of file</td>
+</tr>
+<tr>
+<td>gg</td><td>Navigate to the beginning of file</td>
+</tr>
+<tr>
+<td><strong>.</strong></td><td>Navigate to the last edit</td>
+</tr>
+</table>
+
+If you want to turn the efficiency up to 11, fear not, _Vim_ is the perfect vehicle for turning it up to 11. The resources referenced below will get you the rest of the way there.
+
+## Insert Mode
+
+When you're ready to edit the file, you'll type the letter _I_ to switch to _Insert Mode._ This mode is just for _Inserting_ text whether you're typing it or copying and pasting.
+
+When you're ready to save the file, you'll hit _Esc_ to switch to *command-mode,* then enter``:wq` (_write_ to disk, then _quit_) or just enter `:w` to _save without quitting or `:q!` to _quit without saving if you munge up the document or realize you're in the wrong config file.
+
+There is at least one other mode but extra modes would be a distraction to the perfection possible toggling back and forth between `I` for _Insert_ mode and `Esc`for command-mode.
+
+## A couple more key features
+
+Vim has considerably extended regex capabilities, but start with a simple find and replace. In command mode, enter a `:` followed by the `%s` _(substitute)_ command.mFor example,  `:%s/foo/bar/g` replaces each instance of `foo` with `bar`.
+
+Another command you'll likely find useful is `:set number,` which toggles line numbering in Vim.[^5]
+
+## The next steps
+
+When you've mastered the basics, you'll realize an immediate increase in your efficiency. You could now continue on as a moderately competent Vim user, getting stuff done, yet the model rocket only going about 20 feet off the ground.
+
+> • Here's a good article outlining Vim's [astonishing feature set.](http://www.hostingadvice.com/blog/vim-creator-champions-charityware/)
+
+> • If you're after some more quick efficiency gains, then [Vim Tips and Tricks](https://en.wikipedia.org/wiki/Vim_text_editor) is your next stop.
+		
+> • If you seek to reach higher levels of Vim mastery, then go to the source: [Vim's website](https://vim.sourceforge.io/docs.php) 
+
+I've heard it is possible to reach the highest level of Vim mastery if you can resist succumbing to astonishment at the vastness of this seemingly unassuming text editor. The good news is that the Vim community writes good documentation.
+
+### Notes
+
+[^1]: _"No matter who you are, most of the smartest people work for someone else (other than you)."_
+
+[^2]: Vim's [Wikipedia page.](https://en.wikipedia.org/wiki/Vim_text_editor)
+
+[^3]: Jovica's [history of Vim](https://jovicailic.org/2014/06/the-history-of-vim/)
+
+[^4]: The [Sponsorship page](https://vim.sourceforge.io/sponsor/index.php) and the Sponsorship  [Hall of Honor.](https://vim.sourceforge.io/sponsor/index.php)
+
+[^5]: You can also use the letters k, j, i, or h to navigate up, down, right, and left.
+
+[^5]: The [Vim documentation hub](https://vim.sourceforge.io/docs.php) and [Vim Adventures.](https://vim-adventures.com/)
+
+<a href='#top'>Back to Top</a>

@@ -1,0 +1,90 @@
+ 
+# Introduction
+Firewalld provides dynamic firewall services, supporting both networking and "zones." Here we will focus on configuring a basic firewall could be useful for a public facing server.
+
+## Enabling the Firewall
+Since Centos 7 includes Firewalld by default, you can use _systemctl_ to _start_ *Firewalld* and to _enable_ it at boot:  
+
+• `systemctl start firewalld`  
+• `systemctl enable firewalld`  
+
+Confirm that Firewalld is `running` with this command:  
+`firewall-cmd --state`  
+
+## Reviewing the defaults
+Confirm that the default zone is `public`.
+`firewall-cmd --get-default-zone`  
+
+*Confirm that the only active zone is `public`:*  
+`firewall-cmd --get-active-zones`
+
+*For future reference, you can view a list of all the available zones:*  
+`firewall-cmd --get-zones`
+
+*This should return a list similar to this:*   
+```  
+work drop internal external trusted home dmz public block
+```  
+
+To list what services you currently have authorized for the public zone:
+`firewall-cmd --zone=public --list-services`
+
+List the services again after adding any additional services to confirm they were what you intended.
+
+## Managing services
+Firewalld uses *runtime* and *permanent (persistent)* configuration sets. *Add services rather than ports to make it easier to understand and manage your Firewalld configuration.*
+
+To view a list of the available services:
+`firewall-cmd --get-services`  
+
+If you want to find out more about service configirations: 
+`cd /usr/lib/firewalld/services`
+
+There you will find an xml file for each service. For example, the file for `httpd` will look something like this:  
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>Secure WWW (HTTPS)</short>
+  <description>HTTPS is a modified HTTP used to serve Web pages when security is important.</description>
+  <port protocol="tcp" port="443"/>
+</service>  
+```
+
+### Adding or removing services  
+You can add services for *runtime* or *permanently* (i.e., to load on boot).
+
+*To add or remove a service in runtime:*  
+• `firewall-cmd --zone=public --add-service=https`  
+• `firewall-cmd --zone=public --remove-service=https`  
+
+*To add or remove a service permanently:*  
+• `firewall-cmd --zone=public --add-service=https --permanent`   
+• `firewall-cmd --zone=public --remove-service=https --permanent`  
+
+### Allowing or denying ports
+While it is best practice to add services rather than ports, you can allow or disable traffic via individual ports for runtime and to run permanently (i.e., load at boot).
+
+*To allow or deny traffic to port 443 in rutime:*  
+• `firewall-cmd --zone=public --add-port=443/tcp`  
+• `firewall-cmd --zone=public --remove-port=443/tcp`  
+
+*To allow or deny traffic to port 443 permanently:*  
+• `firewall-cmd --zone=public --add-port=443/tcp --permanent`    
+• `firewall-cmd --zone=public --remove-port=443/tcp --permanent`  
+
+*To add a rule to take effect immediately **and** permanently:*  
+• `firewall-cmd --zone=public --add-service=https --permanent`  
+• `firewall-cmd --reload`  
+
+*List the services after any changes to make sure they're what you intended:*  
+`firewall-cmd --zone=public --list-services`
+
+*Reload firewalld then list services to confirm that services you intended to add permanently took effect:*  
+• `firewall-cmd --reload`
+• `firewall-cmd --zone=public --list-services`
+
+Allowing only those services and ports that you need would be a good basic configuration for a public facing server. You can do a lot more with firewalld, including setting up custom services and configuring multiple zones.
+
+Go to [firewalld.org](http://www.firewalld.org/) for more information and comprehensive documentation.
+

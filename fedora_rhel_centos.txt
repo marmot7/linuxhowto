@@ -1,0 +1,27 @@
+## A distro trifecta
+
+Fedora, Red Hat Enterprise Linux (RHEL), and CentOS each play a critical role in the symbiotic relationship that has propelled this trifecta to the top of the server operating system domain.
+
+### Free to lead the way
+
+Free as in both speech and beer, Fedora leads the way, advancing Free and Open Source (FOSS) software, while staying true to the projects' [Four Foundations:](https://fedoraproject.org/wiki/Foundations) *Freedom, Friends, Features, First*
+
+In 2003, Red Hat founded the Fedora Project to provide support for the Fedora community's work.
+
+Fedora continues to serve as the upstream source of refined innovation for RHEL and CentOS, though the fact that they weigh innovation over stability means you likely wouldn't want to run Fedora on your company's servers.
+
+As an intrepid explorer of new features and new technologies, Fedora fills its research & development role perfectly.
+
+### Selling without selling out
+
+Red Hat Enterprise Linux (RHEL) and CentOS are identical operating systems in all but one important respect: RHEL is not free as in beer. Red Hat charges for support services, consulting, training, and certification.
+
+[Selling support services](https://www.gnu.org/philosophy/selling.html) is a business model that Richard Stallman has been advocating for decades. Stallman is free software's most passionate advocate and most productive developer. Contrary to myth, he's always advocated that software wants to be free as in speech not free as in beer.
+
+In _The Manufacturing Delusion,_ Eric S. Raymond presented extended Stallman's business model into an [economic model of software's use value.](http://www.catb.org/~esr/writings/magic-cauldron/magic-cauldron-3.html)
+
+Red Hat and others have subjected the model to the rigors of the marketplace, proving over and over again that the model works. Despite the numbers, some in the industry haven't yet gotten beyond the _manufacturing delusion._
+
+### Free speech, free beer
+
+This symbiotic relationship has enabled CentOS to become the number one web server operating system while propelling RHEL to the top of the enterprise server domain. Meanwhile, Fedora serves at the leading edge of innovation, playing the upstream role, feeding stable features to CentOS and RHEL.
